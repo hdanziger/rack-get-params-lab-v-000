@@ -22,18 +22,18 @@ class Application
         resp.write "#{cart}\n"
       end
     end
-    elsif req.path.match(/cart/)
       #check if cart is empty
       #if so, write to resp.
-    #elsif req.path.match(/add/)
-    #  @@cart.each do |item|
-      #  if @@items.include?(item)
-    #     @@cart << item
-    #     resp.write "added #{item}"
-    #   else
-    #     "We don't have that item"
-    #   end
-    # end
+    elsif req.path.match(/add/)
+      binding.pry
+     @@cart.each do |item|
+       if @@items.include?(item)
+        @@cart << item
+        resp.write "added #{item}"
+      else
+        "We don't have that item"
+      end
+    end
     else
       resp.write "Path Not Found"
     end
