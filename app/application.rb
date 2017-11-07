@@ -28,8 +28,8 @@ class Application
       #require 'pry'
       #binding.pry
       item_to_add = req.params["item"]
-       if @@items.include?(item)
-        @@cart << item
+       if @@items.include?(item_to_add)
+        @@cart << item_to_add
         resp.write "added #{item}"
       else
         "We don't have that item"
