@@ -25,6 +25,7 @@ class Application
       #check if cart is empty
       #if so, write to resp.
     elsif req.path.match(/add/)
+      require 'pry'
       binding.pry
      @@cart.each do |item|
        if @@items.include?(item)
