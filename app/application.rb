@@ -14,15 +14,17 @@ class Application
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
-    # elsif req.path.match(/cart/)
-    #   @@cart.each do |cart|
-    #     resp.write "#{cart}\n"
-    #   end
+    elsif req.path.match(/cart/)
+      @@cart.each do |cart|
+        resp.write "#{cart}\n"
+      end
+        if @@cart.empty?
+        resp.write "Your cart is empty"
+      end
     elsif req.path.match(/cart/)
       #check if cart is empty
       #if so, write to resp.
-      if @@cart.empty?
-      resp.write "Your cart is empty"
+      
     end
     #elsif req.path.match(/add/)
     #  @@cart.each do |item|
