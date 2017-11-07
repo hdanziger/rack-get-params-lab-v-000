@@ -25,9 +25,9 @@ class Application
       #check if cart is empty
       #if so, write to resp.
     elsif req.path.match(/add/)
-      require 'pry'
-      binding.pry
-     @@cart.each do |item|
+      #require 'pry'
+      #binding.pry
+      item_to_add = req.params["item"]
        if @@items.include?(item)
         @@cart << item
         resp.write "added #{item}"
